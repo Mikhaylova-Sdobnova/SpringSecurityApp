@@ -22,7 +22,7 @@ public class UserController {
         User user = userService.getUserByUsername(username);
         if (user != null) {
             model.addAttribute("user", user);
-            return "user-profile";
+            return "user-page";
         } else {
             return "redirect:/login";
         }

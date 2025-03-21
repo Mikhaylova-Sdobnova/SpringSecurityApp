@@ -19,7 +19,7 @@ public class AdminController {
     @GetMapping("/users")
     public String listUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
-        return "users";
+        return "admin-page";
     }
 
     @GetMapping("/users/{id}")
@@ -27,7 +27,7 @@ public class AdminController {
         User user = userService.getUserById(id);
         if (user != null) {
             model.addAttribute("user", user);
-            return "user";
+            return "user-view";
         } else {
             return "redirect:/admin/users";
         }
